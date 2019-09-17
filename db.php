@@ -11,5 +11,21 @@
 
 
     //guardar, modificar, eliminar
-    function 
+    function NonQuery($sqlstr, $conexion = null){
+        if(!$conexion)global $conexion;
+        $result = $conexion->query($sqlstr);
+        return $conexion->affect_row;
+    }
+
+    //select
+    function ObtenerRegistro($sqlstr, $conexion = null){
+        if(!$conexion)global $conexion;
+        $result = $conexion->query($sqlstr);
+        $resultarray = array();
+        foreach($result as $registro){
+            $resultarray[] = $registro;
+            //array_push($resultarray, $registro);
+        }
+        return $resultarray;
+    }
 ?>
