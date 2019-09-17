@@ -1,6 +1,6 @@
 <?php
     require_once("db.php");
-    $query = "SELECT * FROM mis_contactos";
+    $query = "SELECT * FROM contactos";
     $resultado = ObtenerRegistro($query);
     print_r($resultado);
 ?>

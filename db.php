@@ -23,9 +23,10 @@
         $result = $conexion->query($sqlstr);
         $resultarray = array();
         foreach($result as $registro){
-            $resultarray[] = $registro;
-            //array_push($resultarray, $registro);
+            //$resultarray[] = $registro;
+            array_push($resultarray, $registro);
         }
         return $resultarray;
+        
     }
 ?>
