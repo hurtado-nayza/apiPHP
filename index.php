@@ -1,12 +1,17 @@
 <?php
-    /*require_once("db.php");
-    $query = "SELECT * FROM contactos";
-    $resultado = ObtenerRegistro($query);
-    print_r($resultado);*/
+    require_once("utilidades.php");
 
     if($_SERVER['REQUEST_METHOD']=='GET'){
-        echo "GET";
-        http_response_code(200);
+        $var = $_GET['url'];
+
+        switch($var){
+            case "contactos":
+                $ans = allContactos();
+                print_r( json_encode($ans));
+            break;
+            default;
+        }
+
     }else if($_SERVER['REQUEST_METHOD']=='POST'){
         echo "POST";
         http_response_code(200);
