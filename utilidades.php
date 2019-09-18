@@ -4,6 +4,6 @@
     function allContactos(){
         $query = "SELECT * FROM contactos";
         $answer = ObtenerRegistro($query);
-        return $answer; 
+        return convertirUTF8($answer); 
     }
 ?>
