@@ -3,12 +3,16 @@
 
     if($_SERVER['REQUEST_METHOD']=='GET'){
         $var = $_GET['url'];
+        $number = intval(preg_replace('/[^0-9]+/', '', $var), 10);
 
         switch($var){
             case "contactos":
                 $ans = allContactos();
                 print_r( json_encode($ans));
             break;
+            case "contactos/$number":
+                $ans = idContactos($number);
+                print_r( json_encode($ans));
             default;
         }
 
