@@ -38,7 +38,18 @@
         }else{
             http_response_code(405);
         }
-    }else{
-        //metadata
+    }else{?>
+        <link rel="stylesheet" href="public/estilos.css">
+        <div class="container">
+            <h1>METADATA</h1>
+            <div class="divbody">
+                <p>Productos</p>
+                <code>POST /contactos</code>
+                <code>GET /contactos</code>
+                <code>GET /contactos/$id</code>
+            </div>
+        </div>
+
+<?php
     }
 ?>
