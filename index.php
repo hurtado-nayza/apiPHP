@@ -22,8 +22,19 @@
 
         }else if($_SERVER['REQUEST_METHOD']=='POST'){
             $postBody = file_get_contents("php://input");
-            print_r( json_decode($postBody));
-            http_response_code(200);
+            $convert = json_decode($postBody, true);
+            if(json_last_error()==0){
+                switch($var){
+                    case "contactos":
+                        crearContactos($convert);
+                        http_response_code(200);
+                    break;
+                    default;
+                }
+            }else{
+                http_response_code(400);
+            }
+
         }else{
             http_response_code(405);
         }
